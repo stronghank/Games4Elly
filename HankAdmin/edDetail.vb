@@ -168,7 +168,7 @@ Public Class edDetail
 #End Region
     Public cardName As String
     Public cardAmt As Integer
-    Public cardType As Char
+    Public cardType As String
     Public sql As String
     Public cn As New ADODB.Connection
     Public rs As New ADODB.Recordset
@@ -181,6 +181,7 @@ Public Class edDetail
     End Sub
 
     Private Sub initInfo()
+        On Error GoTo errHandler
         edCdName.Text = cardName
         edCdAmt.Text = cardAmt
         edCdType.Text = cardType
@@ -189,6 +190,9 @@ Public Class edDetail
         If rs.RecordCount Then
             edCdContent.Text = rs(0).Value
         End If
+        Exit Sub
+errHandler:
+        MsgBox("Network issue, please retry later")
     End Sub
 
     Private Sub btnCdCfm_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCdCfm.Click

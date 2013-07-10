@@ -3,13 +3,13 @@
         ProjectType = "Local"
         ProductVersion = "7.10.6030"
         SchemaVersion = "2.0"
-        ProjectGuid = "{FEB85D23-58CF-4B04-8411-748A3B23DA23}"
+        ProjectGuid = "{3FA18496-73A0-488E-98CF-3F0E107FCE98}"
     >
         <Build>
             <Settings
                 ApplicationIcon = ""
                 AssemblyKeyContainerName = ""
-                AssemblyName = "HankAdmin"
+                AssemblyName = "EllyClient"
                 AssemblyOriginatorKeyFile = ""
                 AssemblyOriginatorKeyMode = "None"
                 DefaultClientScript = "JScript"
@@ -20,8 +20,8 @@
                 OptionCompare = "Binary"
                 OptionExplicit = "On"
                 OptionStrict = "Off"
-                RootNamespace = "HankAdmin"
-                StartupObject = "HankAdmin.home"
+                RootNamespace = "EllyClient"
+                StartupObject = "EllyClient.EllyClient"
             >
                 <Config
                     Name = "Debug"
@@ -104,33 +104,23 @@
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "edDetail.vb"
+                    RelPath = "ellyClient.vb"
                     SubType = "Form"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "edDetail.resx"
-                    DependentUpon = "edDetail.vb"
+                    RelPath = "ellyClient.resx"
+                    DependentUpon = "ellyClient.vb"
                     BuildAction = "EmbeddedResource"
                 />
                 <File
-                    RelPath = "home.vb"
+                    RelPath = "newCard.vb"
                     SubType = "Form"
                     BuildAction = "Compile"
                 />
                 <File
-                    RelPath = "home.resx"
-                    DependentUpon = "home.vb"
-                    BuildAction = "EmbeddedResource"
-                />
-                <File
-                    RelPath = "typeDetail.vb"
-                    SubType = "Form"
-                    BuildAction = "Compile"
-                />
-                <File
-                    RelPath = "typeDetail.resx"
-                    DependentUpon = "typeDetail.vb"
+                    RelPath = "newCard.resx"
+                    DependentUpon = "newCard.vb"
                     BuildAction = "EmbeddedResource"
                 />
             </Include>

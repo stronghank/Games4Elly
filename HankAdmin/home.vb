@@ -43,15 +43,20 @@ Public Class home
     Friend WithEvents edCdContent As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents btnChgAmt As System.Windows.Forms.Button
     Friend WithEvents btnEdDetail As System.Windows.Forms.Button
     Friend WithEvents btDel As System.Windows.Forms.Button
     Friend WithEvents edEdAmt As System.Windows.Forms.TextBox
     Friend WithEvents lbCdList As System.Windows.Forms.ListBox
     Friend WithEvents btnRfsh As System.Windows.Forms.Button
     Friend WithEvents btnQuit As System.Windows.Forms.Button
+    Friend WithEvents lbTtlCdAmt As System.Windows.Forms.Label
+    Friend WithEvents btnChgAmt As System.Windows.Forms.Button
+    Friend WithEvents btnEdCdAmt As System.Windows.Forms.Button
+    Friend WithEvents edTtlCdNo As System.Windows.Forms.TextBox
+    Friend WithEvents btnTpDetil As System.Windows.Forms.Button
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.btnCdRst = New System.Windows.Forms.Button
         Me.edCdContent = New System.Windows.Forms.TextBox
         Me.Label4 = New System.Windows.Forms.Label
         Me.edCdType = New System.Windows.Forms.TextBox
@@ -61,22 +66,26 @@ Public Class home
         Me.Label1 = New System.Windows.Forms.Label
         Me.edCdName = New System.Windows.Forms.TextBox
         Me.btnCdGen = New System.Windows.Forms.Button
-        Me.btnCdRst = New System.Windows.Forms.Button
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.btnChgAmt = New System.Windows.Forms.Button
-        Me.btnEdDetail = New System.Windows.Forms.Button
-        Me.btDel = New System.Windows.Forms.Button
-        Me.edEdAmt = New System.Windows.Forms.TextBox
+        Me.edTtlCdNo = New System.Windows.Forms.TextBox
+        Me.btnEdCdAmt = New System.Windows.Forms.Button
+        Me.lbTtlCdAmt = New System.Windows.Forms.Label
         Me.lbCdList = New System.Windows.Forms.ListBox
+        Me.btDel = New System.Windows.Forms.Button
+        Me.btnEdDetail = New System.Windows.Forms.Button
+        Me.btnChgAmt = New System.Windows.Forms.Button
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.edEdAmt = New System.Windows.Forms.TextBox
         Me.btnRfsh = New System.Windows.Forms.Button
         Me.btnQuit = New System.Windows.Forms.Button
+        Me.btnTpDetil = New System.Windows.Forms.Button
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnTpDetil)
         Me.GroupBox1.Controls.Add(Me.btnCdRst)
         Me.GroupBox1.Controls.Add(Me.edCdContent)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -93,6 +102,13 @@ Public Class home
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Card Maker"
+        '
+        'btnCdRst
+        '
+        Me.btnCdRst.Location = New System.Drawing.Point(88, 176)
+        Me.btnCdRst.Name = "btnCdRst"
+        Me.btnCdRst.TabIndex = 8
+        Me.btnCdRst.Text = "Reset"
         '
         'edCdContent
         '
@@ -166,15 +182,11 @@ Public Class home
         Me.btnCdGen.TabIndex = 1
         Me.btnCdGen.Text = "Generate"
         '
-        'btnCdRst
-        '
-        Me.btnCdRst.Location = New System.Drawing.Point(88, 176)
-        Me.btnCdRst.Name = "btnCdRst"
-        Me.btnCdRst.TabIndex = 8
-        Me.btnCdRst.Text = "Reset"
-        '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.edTtlCdNo)
+        Me.GroupBox2.Controls.Add(Me.btnEdCdAmt)
+        Me.GroupBox2.Controls.Add(Me.lbTtlCdAmt)
         Me.GroupBox2.Controls.Add(Me.lbCdList)
         Me.GroupBox2.Controls.Add(Me.btDel)
         Me.GroupBox2.Controls.Add(Me.btnEdDetail)
@@ -183,10 +195,61 @@ Public Class home
         Me.GroupBox2.Controls.Add(Me.edEdAmt)
         Me.GroupBox2.Location = New System.Drawing.Point(184, 8)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(168, 208)
+        Me.GroupBox2.Size = New System.Drawing.Size(168, 240)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Card Editer"
+        '
+        'edTtlCdNo
+        '
+        Me.edTtlCdNo.Location = New System.Drawing.Point(128, 208)
+        Me.edTtlCdNo.Name = "edTtlCdNo"
+        Me.edTtlCdNo.Size = New System.Drawing.Size(32, 20)
+        Me.edTtlCdNo.TabIndex = 13
+        Me.edTtlCdNo.Text = ""
+        '
+        'btnEdCdAmt
+        '
+        Me.btnEdCdAmt.Location = New System.Drawing.Point(8, 208)
+        Me.btnEdCdAmt.Name = "btnEdCdAmt"
+        Me.btnEdCdAmt.Size = New System.Drawing.Size(112, 23)
+        Me.btnEdCdAmt.TabIndex = 12
+        Me.btnEdCdAmt.Text = "Set Total Cards No"
+        '
+        'lbTtlCdAmt
+        '
+        Me.lbTtlCdAmt.Location = New System.Drawing.Point(72, 16)
+        Me.lbTtlCdAmt.Name = "lbTtlCdAmt"
+        Me.lbTtlCdAmt.Size = New System.Drawing.Size(100, 16)
+        Me.lbTtlCdAmt.TabIndex = 11
+        '
+        'lbCdList
+        '
+        Me.lbCdList.Location = New System.Drawing.Point(8, 40)
+        Me.lbCdList.Name = "lbCdList"
+        Me.lbCdList.Size = New System.Drawing.Size(152, 95)
+        Me.lbCdList.TabIndex = 10
+        '
+        'btDel
+        '
+        Me.btDel.Location = New System.Drawing.Point(88, 176)
+        Me.btDel.Name = "btDel"
+        Me.btDel.TabIndex = 6
+        Me.btDel.Text = "Delete"
+        '
+        'btnEdDetail
+        '
+        Me.btnEdDetail.Location = New System.Drawing.Point(8, 176)
+        Me.btnEdDetail.Name = "btnEdDetail"
+        Me.btnEdDetail.TabIndex = 5
+        Me.btnEdDetail.Text = "Edit detail"
+        '
+        'btnChgAmt
+        '
+        Me.btnChgAmt.Location = New System.Drawing.Point(8, 144)
+        Me.btnChgAmt.Name = "btnChgAmt"
+        Me.btnChgAmt.TabIndex = 4
+        Me.btnChgAmt.Text = "Edit amount"
         '
         'Label5
         '
@@ -196,27 +259,6 @@ Public Class home
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Card List:"
         '
-        'btnChgAmt
-        '
-        Me.btnChgAmt.Location = New System.Drawing.Point(8, 144)
-        Me.btnChgAmt.Name = "btnChgAmt"
-        Me.btnChgAmt.TabIndex = 4
-        Me.btnChgAmt.Text = "Edit amount"
-        '
-        'btnEdDetail
-        '
-        Me.btnEdDetail.Location = New System.Drawing.Point(8, 176)
-        Me.btnEdDetail.Name = "btnEdDetail"
-        Me.btnEdDetail.TabIndex = 5
-        Me.btnEdDetail.Text = "Edit detail"
-        '
-        'btDel
-        '
-        Me.btDel.Location = New System.Drawing.Point(88, 176)
-        Me.btDel.Name = "btDel"
-        Me.btDel.TabIndex = 6
-        Me.btDel.Text = "Delete"
-        '
         'edEdAmt
         '
         Me.edEdAmt.Location = New System.Drawing.Point(88, 144)
@@ -224,13 +266,6 @@ Public Class home
         Me.edEdAmt.Size = New System.Drawing.Size(72, 20)
         Me.edEdAmt.TabIndex = 9
         Me.edEdAmt.Text = ""
-        '
-        'lbCdList
-        '
-        Me.lbCdList.Location = New System.Drawing.Point(8, 40)
-        Me.lbCdList.Name = "lbCdList"
-        Me.lbCdList.Size = New System.Drawing.Size(152, 95)
-        Me.lbCdList.TabIndex = 10
         '
         'btnRfsh
         '
@@ -245,6 +280,14 @@ Public Class home
         Me.btnQuit.Name = "btnQuit"
         Me.btnQuit.TabIndex = 3
         Me.btnQuit.Text = "Quit"
+        '
+        'btnTpDetil
+        '
+        Me.btnTpDetil.Location = New System.Drawing.Point(112, 72)
+        Me.btnTpDetil.Name = "btnTpDetil"
+        Me.btnTpDetil.Size = New System.Drawing.Size(48, 23)
+        Me.btnTpDetil.TabIndex = 9
+        Me.btnTpDetil.Text = "Detail"
         '
         'home
         '
@@ -336,6 +379,9 @@ cdGenErrHandle:
         newAmt = edEdAmt.Text
         cdName = lbCdList.SelectedItem
         nameList = Split(cdName, " ")
+        If nameList(0) = Nothing Then
+            GoTo errHandle
+        End If
         sql = "update EllyCards set CardAmt =" & newAmt & " where CardName = '" & nameList(0) & "';"
         rs.Open(sql, cn)
         Me.rfshCdList()
@@ -351,14 +397,25 @@ errHandle:
     Private Sub rfshCdList()
         sql = "select * from EllyCards"
         Dim temp As String
+        Dim currCdAmt As Integer = 0
+        Dim ttlCdAmt As Integer = 0
+        Dim strTtlCdAmt As String
         lbCdList.Items.Clear()
         rs.Open(sql, cn)
         Do While Not rs.EOF
             temp = rs(0).Value & " " & rs(1).Value & " " & rs("CardType").Value
             lbCdList.Items.Add(temp)
+            currCdAmt = currCdAmt + rs(1).Value
             rs.MoveNext()
         Loop
         rs.Close()
+        sql = "select CarAmtLmt from CardsCtrl"
+        rs.Open(sql, cn)
+        ttlCdAmt = rs("CarAmtLmt").Value
+        strTtlCdAmt = currCdAmt & "/" & ttlCdAmt
+        lbTtlCdAmt.Text = strTtlCdAmt
+        rs.Close()
+
     End Sub
 
     Private Sub btDel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btDel.Click
@@ -374,5 +431,20 @@ errHandle:
         edCdAmt.Clear()
         edCdContent.Clear()
         edCdType.Clear()
+    End Sub
+
+    Private Sub btnEdCdAmt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEdCdAmt.Click
+        On Error GoTo errHandler
+        sql = "update CardsCtrl set CarAmtLmt ='" & edTtlCdNo.Text & "';"
+        rs.Open(sql, cn)
+        Me.rfshCdList()
+        Exit Sub
+errHandler:
+        MsgBox("Please enter a valid number")
+    End Sub
+
+    Private Sub btnTpDetil_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTpDetil.Click
+        Dim subForm As New typeDetail
+        subForm.Show()
     End Sub
 End Class

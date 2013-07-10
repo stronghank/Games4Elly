@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EllyClient", "EllyClient.vbproj", "{3FA18496-73A0-488E-98CF-3F0E107FCE98}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{3FA18496-73A0-488E-98CF-3F0E107FCE98}.Debug.ActiveCfg = Debug|.NET
+		{3FA18496-73A0-488E-98CF-3F0E107FCE98}.Debug.Build.0 = Debug|.NET
+		{3FA18496-73A0-488E-98CF-3F0E107FCE98}.Release.ActiveCfg = Release|.NET
+		{3FA18496-73A0-488E-98CF-3F0E107FCE98}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
